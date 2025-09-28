@@ -1,14 +1,77 @@
 # Hangman Game
+import random
 
-# 1. Print welcome message
+hangman_images =[
+    '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
 
-# 2. Set up a list of possible words
+#Print welcome message
+print("Welcome to my Hangman Game!")
+# Set up a list of possible words
+word_list = ["python", "hangman", "challenge", "programming", "developer", "function", "variable", "iteration", "condition", "loop"]
+is_running = True
+#Randomly select a word for the player to guess
+chosen_word = random.choice(word_list)
+while is_running:
+    correct_answer = list(random.choice(word_list))
+    correct_letters = []
+    guessed_letters = []
+    for letter in correct_answer:
+        correct_letters.append("_")
+    #Debug
+    print(f"Correct Answer: {correct_answer}")
+    print(f"Current Correct Letters: {correct_letters}")
+    input()
 
-# 3. Randomly select a word for the player to guess
-
-# 4. Initialize variables for guessed letters, remaining attempts, and display state
-
-# 5. While the word is not guessed and attempts remain:
+# 5. While the word is not gauessed and attempts remain:
     # a. Show current word state (with blanks for unguessed letters)
     # b. Show guessed letters and remaining attempts
     # c. Get user input for a letter guess
